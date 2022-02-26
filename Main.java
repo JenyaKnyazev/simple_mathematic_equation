@@ -36,6 +36,7 @@ public class Main {
                         res[0]+=s.charAt(r);
                     for(int r=i+1;r<s.length();r++)
                         res[2]+=s.charAt(r);
+                    break;
                 }
         }
         return res;
