@@ -18,7 +18,7 @@ public class Main {
         boolean flag=false;
         for(int i=0;i<3;i++)
             res[i]="";
-        for(int i=0;i<s.length();i++)
+        for(int i=s.length()-1;i>=0;i--)
             if(s.charAt(i)=='-' || s.charAt(i)=='+'){
                 res[1]+=s.charAt(i);
                 for(int r=0;r<i;r++)
@@ -29,7 +29,7 @@ public class Main {
                 break;
             }
         if(flag==false){
-            for(int i=0;i<s.length();i++)
+            for(int i=s.length()-1;i>=0;i--)
                 if(s.charAt(i)=='*' || s.charAt(i)=='/'){
                     res[1]+=s.charAt(i);
                     for(int r=0;r<i;r++)
@@ -54,8 +54,13 @@ public class Main {
     public static void main(String []args){
         String s;
         Scanner scan=new Scanner(System.in);
-        System.out.println("Enter mathematic equation like 2*2+5/3");
-        s=scan.next();
-        System.out.println("Result: "+recursive_evaluation(s));
+        while(true){
+            System.out.println("Enter mathematic equation like 2*2+5/3 or -1 exit");
+            s=scan.next();
+            if(s.equals("-1"))
+                break;
+            System.out.println("Result: "+recursive_evaluation(s));
+        }
+        System.out.println("Good Bye");
     }
 }
